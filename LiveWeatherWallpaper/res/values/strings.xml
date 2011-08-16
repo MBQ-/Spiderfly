@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Live Weather Wallpaper</string>
+    <string name="wallpaper_service">Live Weather Wallpaper Service</string>
+    
+<!--  Preferences strings  -->
+    <!-- Location -->
+    <string name="location_key">KEY_LOCATION</string>
+    <string name="location_title">Set Location</string>
+    <string name="location_summary">Location not set</string>
+    <!-- Frequency -->
+    <string name="frequency_key">KEY_FREQUENCY</string>
+    <string name="frequency_title">Update Interval</string>
+    <string name="frequency_summary">Weather update freqeuncy</string>
+    <!-- Touch -->
+    <string name="touch_key">KEY_TOUCH</string>
+    <string name="touch_title">Touch Options</string>
+    <string name="touch_summary">Enable double tap action for weather details</string>
+</resources>

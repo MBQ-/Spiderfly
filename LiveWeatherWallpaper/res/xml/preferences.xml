@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<EditTextPreference
+		android:name="Set Location"
+		android:key="@string/location_key"
+		android:title="@string/location_title"
+		android:defaultValue="@string/location_summary" />
+	<ListPreference
+		android:key="@string/frequency_key"
+		android:title="@string/frequency_title"
+		android:summary="@string/frequency_summary"
+		android:defaultValue="3600000"
+		android:entries="@array/updateFrequency_strings"
+		android:entryValues="@array/updateFrequency_values" />
+	<ListPreference
+		android:key="@string/touch_key"
+		android:title="@string/touch_title"
+		android:summary="@string/touch_summary"
+		android:defaultValue="1"
+		android:entries="@array/touchAction_strings"
+		android:entryValues="@array/touchAction_values" />
+	<com.spiderflystudios.weatherwallpaper.SimpleTextPreference
+        android:name="Last Update"
+        android:summary="Not run yet"
+        android:title="Last update:"
+        android:key="updateTextPref" />
+</PreferenceScreen>

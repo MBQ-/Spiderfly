@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.spiderflystudios.weatherwallpaper"
+      android:versionCode="13"
+      android:versionName="1.2.5">
+    <application 
+    	android:icon="@drawable/icon" 
+    	android:label="@string/app_name">
+    	
+    	<activity android:name=".LiveWallpaperPreferences"
+    		android:launchMode="singleInstance"
+    		android:label="@string/app_name"
+    		android:exported="true" >
+    	</activity>
+    	
+		<service
+            android:label="@string/app_name"
+            android:name=".LiveWallpaperService"
+            android:configChanges="keyboardHidden|orientation"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter android:priority="1">
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/live_wallpaper" />
+        </service>
+		
+		<receiver android:name=".LiveWallpaperService$LiveWallpaperReceiver" android:enabled="true" >
+			<intent-filter>
+                <action android:name="com.spiderflystudios.weatherwall.ACTION_WALLPAPER_UPDATE" />
+                <action android:name="com.spiderflystudios.weatherwall.ACTION_WALLPAPER_RETRY" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name=".LiveWallpaperPainting$PaintingReceiver" android:enabled="true" >
+			<intent-filter>
+                <action android:name="com.spiderflystudios.weatherwall.ACTION_WALLPAPER_PAINT" />
+            </intent-filter>
+        </receiver>
+    </application>
+    
+    <uses-sdk android:minSdkVersion="7" />
+	<uses-feature android:name="android.software.live_wallpaper" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest> 
